@@ -1,0 +1,283 @@
+#app {
+  width: 400px;
+  height: 400px;
+  margin: 0 auto;
+  position: relative;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  outline: none;
+}
+
+body {
+  font-family: "Open Sans";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+  background: rgb(60, 60, 242);
+  background: linear-gradient(90deg, rgba(60, 60, 242, 1) 0%, rgba(98, 245, 230, 1) 52%, rgba(60, 60, 242, 1) 100%);
+  background-size: cover;
+}
+
+label {
+  position: fixed;
+  bottom: 60px;
+  right: 350px;
+}
+
+.arrow {
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  position: fixed;
+  top: 450px;
+  left: 475px;
+}
+
+input[type=text] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 1px solid #555;
+  outline: none;
+  position: fixed;
+}
+
+.right {
+  position: fixed;
+  right: 100px;
+  bottom: 100px;
+}
+
+.left {
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+  position: fixed;
+  right: 470px;
+}
+
+.mainbox {
+  position: relative;
+  width: 500px;
+  height: 500px;
+}
+
+.mainbox:after {
+  position: absolute;
+  content: '';
+  width: 32px;
+  height: 32px;
+  background: url('arrow-left.png') no-repeat;
+  background-size: 32px;
+  right: -30px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.box {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  font-weight: bold;
+  border-radius: 50%;
+  border: 10px solid #fff;
+  overflow: hidden;
+  transition: all ease 5s;
+}
+
+span {
+  width: 50%;
+  height: 50%;
+  display: inline-block;
+  position: absolute;
+}
+
+.span1 {
+  clip-path: polygon(0 92%, 100% 50%, 0 8%);
+  background-color: #fffb00;
+  top: 120px;
+  left: 0;
+}
+
+.span2 {
+  clip-path: polygon(100% 92%, 0 50%, 100% 8%);
+  background-color: #ff4fa1;
+  top: 120px;
+  right: 0;
+}
+
+.span3 {
+  clip-path: polygon(50% 0%, 8% 100%, 92% 100%);
+  background-color: #ffaa00;
+  bottom: 0;
+  left: 120px;
+}
+
+.span4 {
+  clip-path: polygon(50% 100%, 92% 0, 8% 0);
+  background-color: #22ff00;
+  top: 0;
+  left: 120px;
+}
+
+.box1 .span3 b {
+  transform: translate(-50%, -50%) rotate(-270deg);
+}
+
+.box1 .span1 b,
+.box2 .span1 b {
+  transform: translate(-50%, -50%) rotate(185deg);
+}
+
+.box2 .span3 b {
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.box1 .span4 b,
+.box2 .span4 b {
+  transform: translate(-50%, -50%) rotate(-85deg);
+}
+
+span b {
+  font-size: 24px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.box2 {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-135deg);
+}
+
+.spin {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  border: 4px solid #fff;
+  background-color: #001aff;
+  color: #fff;
+  box-shadow: 0 5px 20px #000;
+  font-weight: bold;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.spin:active {
+  width: 70px;
+  height: 70px;
+  font-size: 20px;
+}
+
+.mainbox.animate:after {
+  animation: animateArrow 0.7s ease infinite;
+}
+
+@keyframes animateArrow {
+  50% {
+    right: -40px;
+  }
+}
+
+.display {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  height: 50px;
+  border: 1px solid black;
+  border-radius: 20px;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 2rem;
+  margin: 20px auto;
+  position: absolute;
+  bottom: 0px;
+  right: 650px;
+}
+
+.marker {
+  position: absolute;
+  width: 60px;
+  left: 172px;
+  top: -20px;
+  z-index: 2;
+}
+
+input[type=text] {
+  width: 20%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 1px solid #555;
+  outline: none;
+  position: fixed;
+  right: 50px;
+  bottom: 50px;
+}
+
+.right {
+  position: fixed;
+  right: 100px;
+  bottom: 100px;
+}
+
+.wheel {
+  width: 100%;
+  height: 100%;
+}
+
+.button {
+  display: block;
+  width: 250px;
+  margin: 40px auto;
+  cursor: pointer;
+}
+
+.button:hover {
+  opacity: 0.8;
+}
+
+.blur {
+  animation: blur 10s;
+}
+
+@keyframes blur {
+  0% {
+    filter: blur(1.5px);
+  }
+  80% {
+    filter: blur(1.5px);
+  }
+  100% {
+    filter: blur(0px);
+  }
+}
+
+/* Added large arrow */
+.big-arrow {
+  width: 0;
+  height: 0;
+  border-left: 30px solid transparent;
+  border-right: 30px solid transparent;
+  border-top: 60px solid red;
+  position: absolute;
+  bottom: -30px;
+  left: -30px;
+  z-index: 1000;
+}
